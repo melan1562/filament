@@ -27,9 +27,10 @@ class UserResource extends Resource
             ->schema([
                 TextInput::make('name')->required(),
                 TextInput::make('email')->email(),
-                TextInput::make('password')->password()->visibleOn('create')  //visible, visibleOn
-
+                // TextInput::make('password')->password()->visibleOn('create')  //visible, visibleOn
                 // TextInput::make('password')->password()->readOnlyOn('edit'), //readOnlyOn, readOnly
+                TextInput::make('password')->password(),
+
             ]);
     }
 
@@ -39,8 +40,7 @@ class UserResource extends Resource
             ->columns([
                 TextColumn::make('name'),
                 TextColumn::make('email'),
-
-                TextColumn::make('password'),
+                // TextColumn::make('password'),
 
             ])
             ->filters([
